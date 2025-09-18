@@ -13001,5 +13001,34 @@ code {
 }
 
 
+#block-bootstrap5-bannersedesur {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#block-bootstrap5-bannerpiepagina {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.block-bootstrap5-footer nav {
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: row;
+}
+
+.navbar .container {
+    justify-content: flex-end;
+}
+
+@media (min-width: 1200px) {
+    .navbar-expand-lg .navbar-collapse {
+        display: flex !important;
+        flex-basis: auto;
+    }
+}
+
 
 /*# sourceMappingURL=style.css.map */
