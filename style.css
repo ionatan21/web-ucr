@@ -4005,11 +4005,16 @@ textarea.form-control-lg {
   --bs-nav-link-hover-color: var(--bs-navbar-hover-color);
   --bs-nav-link-disabled-color: var(--bs-navbar-disabled-color);
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   padding-left: 0;
   margin-bottom: 0;
   list-style: none;
 }
+
+.region-footer .navbar-nav {
+  font-weight: bold;
+}
+
 .navbar-nav .nav-link.active, .navbar-nav .media-library-view--widget .view-header a.active, .navbar-nav .media-library-view--widget .view-header a.is-active, .media-library-view--widget .view-header .navbar-nav a.active, .media-library-view--widget .view-header .navbar-nav a.is-active, .navbar-nav .nav-link.show, .navbar-nav .media-library-view--widget .view-header a.show, .media-library-view--widget .view-header .navbar-nav a.show {
   color: var(--bs-navbar-active-color);
 }
@@ -9819,6 +9824,9 @@ textarea.form-control-lg {
   .justify-content-md-start {
     justify-content: flex-start !important;
   }
+  #navbarSupportedContent {
+    justify-content: center !important;
+  }
   .justify-content-md-end {
     justify-content: flex-end !important;
   }
@@ -12794,6 +12802,11 @@ tr.region-title td {
   list-style: none;
 }
 
+.item-list ul {
+  padding-left: 0;
+  list-style: none;
+}
+
 em.placeholder {
   display: unset;
   min-height: unset;
@@ -12821,6 +12834,7 @@ code {
   color: #34495E;
   text-align: center;
   font-size: 32px;
+  font-weight: 900;
 }
 
 .field--name-field-coord-resumen{
@@ -13025,6 +13039,165 @@ code {
         flex-basis: auto;
     }
 }
+
+.field.field--name-field-informacion-adicional {
+    font-family: TruenoRg;
+    color: #7A7A7A;
+    text-align: left;
+    font-size: 16px;
+    margin-top: 20px;
+    margin-bottom: 100px;
+}
+
+.field--name-field-servicios-que-ofrece{
+    font-family: TruenoRg;
+    color: #7A7A7A;
+    text-align: left;
+    font-size: 16px;
+    margin-top: 20px;
+    margin-bottom: 100px;
+}
+
+.field.field--name-field-media-image.field--type-image.field--label-visually_hidden {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.node--type-noticias .field--name-field-imagen {
+  display: grid;
+  gap: 14px;
+  grid-template-columns: repeat(2, 1fr); /* 2 columnas fijas en escritorio */
+  max-width: 1100px;
+  margin: 0 auto 24px;
+  justify-items: center;
+}
+
+.node--type-noticias .field--name-field-imagen .field__item {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 3; /* Mantiene proporción uniforme */
+  overflow: hidden;
+  border-radius: 10px;
+  background: #f0f0f0;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.node--type-noticias .field--name-field-imagen img {
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.node--type-noticias .field--name-field-imagen .field__item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+}
+
+.node--type-noticias .field--name-field-imagen .field__item:hover img {
+  transform: scale(1.05);
+}
+
+@media (max-width: 900px) {
+  .node--type-noticias .field--name-field-imagen {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .node--type-noticias .field--name-field-imagen {
+    grid-template-columns: 1fr;
+  }
+}
+
+.clearfix.text-formatted.field.field--name-body{
+    font-family: TruenoRg;
+    color: #7A7A7A;
+    text-align: left;
+    font-size: 16px;
+    margin-top: 20px;
+    margin-bottom: 100px;
+}
+
+
+.region.region-content{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  .field--name-title{
+    text-align: center;
+    font-family: Roboto, sans-serif;
+    font-size: 32px;
+    color: #6EC1E4;
+    margin-bottom: 20px;
+    font-weight: 700;
+  }
+
+  .field--name-body{
+    font-family: TruenoRg;
+    color: #7A7A7A;
+    text-align: left;
+    font-size: 16px;
+    margin-top: 20px;
+    margin-bottom: 50px;
+  }
+
+  .field--name-field-mas-informacion{
+    font-family: TruenoRg;
+    color: #7A7A7A;
+    text-align: left;
+    font-size: 16px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+
+    .field--name-field-convocatoria-publica{
+    margin-bottom: 30px;
+    }
+
+  .field--name-field-convocatoria-publica a{
+    text-align: center;
+    font-family: Roboto, sans-serif;
+    font-size: calc(1.275rem + .3vw);
+    color: #000;
+    font-weight: bolder;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  .field--name-field-convocatoria-publica a:hover{
+    color: rgb(0, 192, 243);
+  }
+
+    .field--name-field-formulario-docentes{
+      margin-bottom: 50px;  
+    }
+
+  .field--name-field-formulario-docentes a{
+    font-size: 16px;
+    padding: 15px 30px;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+    background-color: #45B5E5;
+    color: #FFF;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  .field--name-field-formulario-docentes a:hover{
+        transition: all .3s;
+        transition-duration: .3s;
+        transition-property: transform;
+        transform: scale(1.1);
+   }
+}
+
+
 
 
 /*# sourceMappingURL=style.css.map */
