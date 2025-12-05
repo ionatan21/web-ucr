@@ -12825,6 +12825,11 @@ code {
   overflow-y: auto;
 }
 
+/* ========================================
+   ESTILOS PARA PÁGINAS DE COORDINACIÓN
+   ======================================== */
+
+/* Título principal de la coordinación */
 .field--name-title{
   font-family: TruenoRg;
   color: #34495E;
@@ -12833,6 +12838,7 @@ code {
   font-weight: 900;
 }
 
+/* Resumen/descripción de la coordinación */
 .field--name-field-coord-resumen{
   font-family: TruenoRg;
   color: #7A7A7A;
@@ -12846,6 +12852,7 @@ code {
 
 
 
+/* Título de la sección de miembros (primer elemento) */
 .field--name-field-miembros-coord:first-child {
   font-family: TruenoRg;
   color: #34495E;
@@ -12856,9 +12863,12 @@ code {
 
 
 
+/* ========================================
+   SECCIÓN: MIEMBROS DE LA COORDINACIÓN
+   ======================================== */
+
+/* Contenedor principal de miembros */
 .field--name-field-miembros-coord {
-
-
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
@@ -12866,10 +12876,7 @@ code {
   align-items: center;
   margin-bottom: 50px;
 
-
-
-
-
+  /* Grid de 3 columnas para mostrar los miembros */
   .field__items {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -12877,6 +12884,7 @@ code {
     grid-row-gap: 0px;
     gap: 10px;
 
+    /* Cada tarjeta de miembro */
     .field__item{
       display: flex;
       flex-direction: column;
@@ -12888,6 +12896,7 @@ code {
 
   
 
+  /* Foto de perfil circular del miembro */
   img{
     width: 300px !important;
     height: 300px !important;
@@ -12895,6 +12904,7 @@ code {
     background-color: #6EC1E4;
   }
 
+  /* Nombre del miembro */
   .field--name-field-nombre-de-miembro{
     text-align: center;
     font-size: 20px;
@@ -12902,19 +12912,21 @@ code {
     color: #6EC1E4;
   }
 
+  /* Cargo/posición del miembro */
   .field--name-field-cargo-de-miembro{
     text-align: center;
     font-size: 16px;
   }
 
-.field--name-field-otras-areas-de-interes{
+  /* Otras áreas de interés del miembro */
+  .field--name-field-otras-areas-de-interes{
     text-align: center;
     font-size: 16px;
-}
+  }
 
-@media (max-width: 1000px) {
-
- 
+  /* ===== RESPONSIVE: TABLET (hasta 1000px) ===== */
+  @media (max-width: 1000px) {
+    /* Reducir tamaño de fotos para tablets */
     img{
       width: 150px !important;
       height: 150px !important;
@@ -12922,6 +12934,7 @@ code {
       background-color: #6EC1E4;
     }
 
+    /* Ajustar tamaño de texto del nombre */
     .field--name-field-nombre-de-miembro{
       text-align: center;
       font-size: 16px;
@@ -12929,20 +12942,22 @@ code {
       color: #6EC1E4;
     }
 
+    /* Reducir tamaño de texto del cargo */
     .field--name-field-cargo-de-miembro{
       text-align: center;
       font-size: 12px;
     }
 
-  .field--name-field-otras-areas-de-interes{
+    /* Reducir tamaño de texto de áreas de interés */
+    .field--name-field-otras-areas-de-interes{
       text-align: center;
       font-size: 12px;
+    }
   }
-}
 
-@media (max-width: 500px) {
-
- 
+  /* ===== RESPONSIVE: MÓVIL (hasta 500px) ===== */
+  @media (max-width: 500px) {
+    /* Fotos más pequeñas para móviles */
     img{
       width: 100px !important;
       height: 100px !important;
@@ -12950,6 +12965,7 @@ code {
       background-color: #6EC1E4;
     }
 
+    /* Mantener tamaño de nombre legible en móvil */
     .field--name-field-nombre-de-miembro{
       text-align: center;
       font-size: 16px;
@@ -12957,41 +12973,48 @@ code {
       color: #6EC1E4;
     }
 
+    /* Texto pequeño para cargo en móvil */
     .field--name-field-cargo-de-miembro{
       text-align: center;
       font-size: 12px;
     }
 
-  .field--name-field-otras-areas-de-interes{
+    /* Texto pequeño para áreas de interés en móvil */
+    .field--name-field-otras-areas-de-interes{
       text-align: center;
       font-size: 12px;
-  }
+    }
 
-  .field__items {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-column-gap: 0px;
-    grid-row-gap: 0px;
-    gap: 10px;
+    /* Cambiar a 2 columnas en móvil */
+    .field__items {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-column-gap: 0px;
+      grid-row-gap: 0px;
+      gap: 10px;
 
-    .field__item{
-      display: flex;
-      flex-direction: column;
-      align-items: center;
+      .field__item{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
     }
   }
-}
 
 
 
 }
+
+/* ========================================
+   SECCIÓN: FUNCIONES DE LA COORDINACIÓN
+   ======================================== */
 
 .field--name-field-funciones-de-la-coordinaci{
-
   gap: 20px;
   margin-top: 50px;
   margin-bottom: 50px;
 
+  /* Título de la sección de funciones */
   .field__label{
     text-align: center;
     font-family: Roboto, sans-serif;
@@ -12999,6 +13022,8 @@ code {
     color: #6EC1E4;
     margin-bottom: 20px;
   }
+  
+  /* Contenido/descripción de cada función */
   .field__item{
     font-family: TruenoRg;
     font-size: 16px;
@@ -13007,28 +13032,37 @@ code {
 }
 
 
+/* ========================================
+   BLOQUES DE LAYOUT Y NAVEGACIÓN
+   ======================================== */
+
+/* Banner superior de sedes */
 #block-bootstrap5-bannersedesur {
     display: flex;
     justify-content: space-around;
     align-items: center;
 }
 
+/* Banner del pie de página */
 #block-bootstrap5-bannerpiepagina {
     display: flex;
     justify-content: space-around;
     align-items: center;
 }
 
+/* Menú de navegación del footer */
 .block-bootstrap5-footer nav {
     display: flex;
     justify-content: space-evenly;
     flex-direction: row;
 }
 
+/* Alinear contenido de navbar a la derecha */
 .navbar .container {
     justify-content: flex-end;
 }
 
+/* Navbar responsive en pantallas grandes */
 @media (min-width: 1200px) {
     .navbar-expand-lg .navbar-collapse {
         display: flex !important;
@@ -13036,6 +13070,11 @@ code {
     }
 }
 
+/* ========================================
+   CAMPOS DE CONTENIDO ADICIONAL
+   ======================================== */
+
+/* Información adicional de la coordinación */
 .field.field--name-field-informacion-adicional {
     font-family: TruenoRg;
     color: #7A7A7A;
@@ -13045,6 +13084,7 @@ code {
     margin-bottom: 100px;
 }
 
+/* Servicios que ofrece la coordinación */
 .field--name-field-servicios-que-ofrece{
     font-family: TruenoRg;
     color: #7A7A7A;
@@ -13054,12 +13094,34 @@ code {
     margin-bottom: 100px;
 }
 
+/* ========================================
+   GALERÍAS DE IMÁGENES
+   ======================================== */
+
+/* Contenedor principal de imágenes */
 .field.field--name-field-media-image.field--type-image.field--label-visually_hidden {
     display: flex;
     flex-direction: row;
     justify-content: center;
 }
 
+/* Imágenes en páginas de información de interés */
+.node--type-info-de-interes .field--name-field-media-image .field__item{
+  position: relative;
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    overflow: hidden;
+    border-radius: 10px;
+    background: #f0f0f0;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* ========================================
+   IMÁGENES DE NOTICIAS
+   ======================================== */
+
+/* Grid de 2 columnas para imágenes de noticias */
 .node--type-noticias .field--name-field-imagen {
   display: grid;
   gap: 14px;
@@ -13069,6 +13131,7 @@ code {
   justify-items: center;
 }
 
+/* Cada imagen individual de noticia */
 .node--type-noticias .field--name-field-imagen .field__item {
   position: relative;
   width: 100%;
@@ -13080,6 +13143,7 @@ code {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+/* Estilo de las imágenes dentro de las noticias */
 .node--type-noticias .field--name-field-imagen img {
   width: 100%;
   height: 100%;
@@ -13088,27 +13152,34 @@ code {
   transition: transform 0.4s ease;
 }
 
+/* Efecto hover para tarjetas de noticias */
 .node--type-noticias .field--name-field-imagen .field__item:hover {
   transform: translateY(-4px);
   box-shadow: 0 6px 18px rgba(0,0,0,0.15);
 }
 
+/* Efecto hover para imágenes de noticias */
 .node--type-noticias .field--name-field-imagen .field__item:hover img {
   transform: scale(1.05);
 }
 
+/* ===== RESPONSIVE: IMÁGENES DE NOTICIAS ===== */
+
+/* Tablet: mantener 2 columnas hasta 900px */
 @media (max-width: 900px) {
   .node--type-noticias .field--name-field-imagen {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
+/* Móvil: cambiar a 1 columna */
 @media (max-width: 600px) {
   .node--type-noticias .field--name-field-imagen {
     grid-template-columns: 1fr;
   }
 }
 
+/* Texto del cuerpo principal de contenido */
 .clearfix.text-formatted.field.field--name-body{
     font-family: TruenoRg;
     color: #7A7A7A;
@@ -13119,12 +13190,17 @@ code {
 }
 
 
+/* ========================================
+   REGIÓN PRINCIPAL DE CONTENIDO
+   ======================================== */
+
 .region.region-content{
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
 
+  /* Título principal de la página */
   .field--name-title{
     text-align: center;
     font-family: Roboto, sans-serif;
@@ -13134,6 +13210,7 @@ code {
     font-weight: 700;
   }
 
+  /* Contenido principal del cuerpo */
   .field--name-body{
     font-family: TruenoRg;
     color: #7A7A7A;
@@ -13143,6 +13220,7 @@ code {
     margin-bottom: 50px;
   }
 
+  /* Sección de información adicional */
   .field--name-field-mas-informacion{
     font-family: TruenoRg;
     color: #7A7A7A;
@@ -13152,10 +13230,14 @@ code {
     margin-bottom: 20px;
   }
 
-    .field--name-field-convocatoria-publica{
+  /* ===== ENLACES Y BOTONES DE ACCIÓN ===== */
+  
+  /* Sección de convocatoria pública */
+  .field--name-field-convocatoria-publica{
     margin-bottom: 30px;
-    }
+  }
 
+  /* Estilo para enlaces de convocatoria pública */
   .field--name-field-convocatoria-publica a{
     text-align: center;
     font-family: Roboto, sans-serif;
@@ -13166,14 +13248,17 @@ code {
     cursor: pointer;
   }
 
+  /* Efecto hover para enlaces de convocatoria */
   .field--name-field-convocatoria-publica a:hover{
     color: rgb(0, 192, 243);
   }
 
-    .field--name-field-formulario-docentes{
-      margin-bottom: 50px;  
-    }
+  /* Sección de formulario para docentes */
+  .field--name-field-formulario-docentes{
+    margin-bottom: 50px;  
+  }
 
+  /* Botón de formulario para docentes */
   .field--name-field-formulario-docentes a{
     font-size: 16px;
     padding: 15px 30px;
@@ -13185,20 +13270,26 @@ code {
     cursor: pointer;
   }
 
+  /* Efecto hover para botón de formulario */
   .field--name-field-formulario-docentes a:hover{
-        transition: all .3s;
-        transition-duration: .3s;
-        transition-property: transform;
-        transform: scale(1.1);
-   }
+    transition: all .3s;
+    transition-duration: .3s;
+    transition-property: transform;
+    transform: scale(1.1);
+  }
 }
 
+/* ========================================
+   BLOQUE DE NOTICIAS DE INICIO
+   ======================================== */
+
+/* Espaciado del bloque de noticias */
 .block-views-blocknoticias-inicio-block-1{
   margin-top: 50px; 
   margin-bottom: 50px;
 }
 
-
+/* Grid principal de noticias (3 columnas en escritorio) */
 .view-noticias-inicio .view-content ul {
   display: grid;
   gap: 16px;
@@ -13209,7 +13300,7 @@ code {
   max-width: 1100px;
 }
 
-
+/* Cada tarjeta individual de noticia */
 .view-noticias-inicio .view-content ul > li {
   background: #fff;
   border-radius: 10px;
@@ -13220,6 +13311,7 @@ code {
   flex-direction: column;
 }
 
+/* Imágenes de las tarjetas de noticia */
 .view-noticias-inicio .views-field-field-imagen img {
   width: 100%;
   height: 220px;
@@ -13228,11 +13320,13 @@ code {
   transition: transform 0.4s ease;
 }
 
+/* Contenedor del título de la noticia */
 .view-noticias-inicio .views-field-title {
   padding: 14px 16px;
   flex-grow: 1;
 }
 
+/* Estilo del enlace del título */
 .view-noticias-inicio .views-field-title a {
   display: block;
   font-size: 1rem;
@@ -13243,25 +13337,32 @@ code {
   transition: color 0.3s ease;
 }
 
+/* Hover del título */
 .view-noticias-inicio .views-field-title a:hover {
   color: #0056b3;
 }
 
+/* Efecto hover de la tarjeta completa */
 .view-noticias-inicio .view-content ul > li:hover {
   transform: translateY(-4px);
   box-shadow: 0 6px 16px rgba(0,0,0,0.15);
 }
 
+/* Efecto hover de la imagen */
 .view-noticias-inicio .view-content ul > li:hover img {
   transform: scale(1.05);
 }
 
+/* ===== RESPONSIVE: NOTICIAS DE INICIO ===== */
+
+/* Tablet: 2 columnas */
 @media (max-width: 900px) {
   .view-noticias-inicio .view-content ul {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
+/* Móvil: 1 columna */
 @media (max-width: 600px) {
   .view-noticias-inicio .view-content ul {
     grid-template-columns: 1fr;
@@ -13270,6 +13371,11 @@ code {
 
 
 
+/* ========================================
+   FOOTER Y SECCIÓN DE INTERÉS
+   ======================================== */
+
+/* Contenedor del footer sin márgenes */
 footer .container {
     margin: 0;
     padding: 0;
@@ -13286,7 +13392,7 @@ footer .container {
   text-align: center;
 }
 
-/* Título principal */
+/* Título principal de la sección de interés */
 .block-views-blockinformacion-de-interes-block-1 h2 {
   color: #fff;
   font-weight: 700;
@@ -13295,7 +13401,7 @@ footer .container {
   text-transform: uppercase;
 }
 
-/* Lista de elementos (tarjetas) */
+/* Grid responsivo de tarjetas de interés */
 .block-views-blockinformacion-de-interes-block-1 .view-content ul {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
@@ -13306,7 +13412,7 @@ footer .container {
   max-width: 1100px;
 }
 
-/* Cada ítem */
+/* Cada tarjeta individual de interés */
 .block-views-blockinformacion-de-interes-block-1 li {
   background: rgba(0, 0, 0, 0.12);
   border-radius: 0.75rem;
@@ -13318,12 +13424,13 @@ footer .container {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+/* Efecto hover para tarjetas de interés */
 .block-views-blockinformacion-de-interes-block-1 li:hover {
   transform: translateY(-5px);
   box-shadow: 0 8px 18px rgba(0, 0, 0, 0.15);
 }
 
-/* Imagen */
+/* Imágenes de las tarjetas de interés */
 .block-views-blockinformacion-de-interes-block-1 .views-field-field-imagen-relevante img {
   width: 100%;
   max-width: 140px;
@@ -13333,15 +13440,17 @@ footer .container {
   transition: transform 0.25s ease;
 }
 
+/* Efecto hover en imágenes de interés */
 .block-views-blockinformacion-de-interes-block-1 li:hover img {
   transform: scale(1.05);
 }
 
-/* Título debajo de la imagen */
+/* Contenedor del título debajo de la imagen */
 .block-views-blockinformacion-de-interes-block-1 .views-field-title {
   padding-top: 0.4rem;
 }
 
+/* Estilo de enlaces en tarjetas de interés */
 .block-views-blockinformacion-de-interes-block-1 .views-field-title a {
   color: #fff;
   font-size: 1rem;
@@ -13350,6 +13459,7 @@ footer .container {
   transition: color 0.2s ease;
 }
 
+/* Hover para enlaces de tarjetas de interés */
 .block-views-blockinformacion-de-interes-block-1 .views-field-title a:hover {
   color: #003d61;
   text-decoration: underline;
@@ -13400,30 +13510,190 @@ footer.footer-dark img:hover {
   filter: brightness(1.15);
 }
 
+/* ===== RESPONSIVE: FOOTER EN MÓVILES MUY PEQUEÑOS ===== */
 @media (max-width: 400px) {
+  /* Banner del pie de página en móviles pequeños */
   #block-bootstrap5-bannerpiepagina {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  gap: 1rem;
-}
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+  }
 
-#block-bootstrap5-bannerpiepagina .field__item{
+  /* Items del banner del pie */
+  #block-bootstrap5-bannerpiepagina .field__item{
     width: fit-content;
     display: flex;
     align-items: center;
     justify-content: center;
+  }
+
+  /* Imágenes del banner reducidas */
+  #block-bootstrap5-bannerpiepagina img {
+    max-width: 50%;
+    height: auto;
+  }
 }
 
-#block-bootstrap5-bannerpiepagina img {
-  max-width: 50%;
+/* ========================================
+   HEADER Y CAMPOS DE IMAGEN
+   ======================================== */
+
+/* Fondo celeste para la región del header */
+.region.region-header {
+    background-color: #00c0f3;
+}
+
+/* Ocultar imagen relevante (no usada) */
+.field--name-field-imagen-relevante{
+    display: none;
+}
+
+/* Mostrar imagen de información relevante */
+.field--name-field-imagen-info-relevante{
+    display: flex;
+    margin-top: 20px;
+    margin-bottom: 50px;
+}
+
+/* Espaciado del título de página */
+#block-bootstrap5-page-title{
+    margin-top: 30px;
+}
+
+/* ========================================
+   EFECTOS DE IMAGEN Y TRANSICIONES
+   ======================================== */
+
+/* Imagen principal con transición de vista */
+.node--type-info-de-interes .img-fluid{
+  view-transition-name: hero-image;
+  transition: transform 0.3s ease;
+  border-radius: 0.5rem;
+  max-width: 100%;
   height: auto;
 }
 
+/* Efecto hover para imagen principal */
+.node--type-info-de-interes .img-fluid:hover{
+  transform: scale(1.05);
+}
+
+/* Enlaces de interés */
+.field--name-field-enlaces-de-interes{
+    display: flex;
+    justify-content: flex-start;
+    gap: 10px;
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    font-family: truenorg;
 }
 
 
+/* ========================================
+   ANIMACIONES Y TRANSICIONES DE VISTA
+   ======================================== */
+
+/* Configuración de transiciones de vista para imagen hero */
+::view-transition-old(hero-image),
+::view-transition-new(hero-image) {
+  animation-duration: 0.4s;
+  animation-timing-function: ease;
+}
+
+/* Animación de salida de imagen hero */
+::view-transition-old(hero-image) {
+  animation-name: fade-out;
+}
+
+/* Animación de entrada de imagen hero */
+::view-transition-new(hero-image) {
+  animation-name: fade-in;
+}
+
+/* ===== DEFINICIONES DE KEYFRAMES ===== */
+
+/* Animación de desvanecimiento con escala hacia afuera */
+@keyframes fade-out {
+  from { opacity: 1; transform: scale(1); }
+  to   { opacity: 0; transform: scale(0.9); }
+}
+
+/* Animación de aparición con escala */
+@keyframes fade-in {
+  from { opacity: 0; transform: scale(1.05); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+/* Animación de entrada desde arriba */
+@keyframes fade-in-down {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Animación de desvanecimiento simple */
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Animación de entrada desde abajo */
+@keyframes fade-in-up {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+/* ========================================
+   APLICACIÓN DE ANIMACIONES A ELEMENTOS
+   ======================================== */
+
+/* Animación de entrada para tarjetas de noticias */
+.view-noticias-inicio .view-content ul > li {
+    animation: fade-in-up 0.5s ease-out forwards;
+}
+
+/* Animación de entrada para banner de sedes */
+#block-bootstrap5-bannersedesur{
+  animation: fade-in-down 0.5s ease-out forwards;
+}
+
+/* Animación de entrada para navbar */
+.navbar{
+  animation: fade-in-down 0.5s ease-out forwards;
+  z-index: 100;
+}
+
+.view-content .views-row {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 50px;
+    margin-top: 20px;
+
+    img{
+        border-radius: 10px;
+    }
+}
 
 
 /*# sourceMappingURL=style.css.map */
