@@ -13681,19 +13681,648 @@ footer.footer-dark img:hover {
   z-index: 100;
 }
 
+/* ========================================
+   CONTENEDOR DE FILAS DE VISTAS (VIEWS)
+   Reutilizable: .view-content .views-row
+   ======================================== */
+
+/**
+ * Layout vertical centrado para filas de vistas
+ * 
+ * @aplicar-a: Bloques de vistas, listados de contenido
+ * @customizar: gap (espaciado), margin (separación)
+ */
 .view-content .views-row {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 20px;
-    margin-bottom: 50px;
+    gap: 20px;                    /* Espaciado entre elementos internos */
+    margin-bottom: 50px;          /* Separación entre filas */
     margin-top: 20px;
 
+    /* Imágenes con bordes redondeados */
+    img{
+        border-radius: 10px;      /* Radio de borde suave */
+    }
+
+    /* Párrafos con tipografía personalizada */
+    p{
+        font-family: truenorg;
+    }
+}
+
+/* ========================================
+   REGIÓN PRINCIPAL DE CONTENIDO
+   Reutilizable: .region.region-content
+   ======================================== */
+
+/**
+ * Contenedor principal con layout flexbox centrado
+ * 
+ * @aplicar-a: Secciones principales de contenido
+ * @customizar: padding, gap, margin
+ */
+.region.region-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;                    /* Espaciado entre elementos hijos */
+    margin-bottom: 50px;
+    margin-top: 20px;
+    padding: 1.5rem 1rem;         /* Padding interno responsivo */
+    
+    /* Imágenes con bordes redondeados */
     img{
         border-radius: 10px;
     }
+
+    /* Párrafos con tipografía personalizada */
+    p{
+        font-family: truenorg;
+    }
 }
+
+/* ========================================
+   TIPOGRAFÍA BASE Y VARIABLES
+   Reutilizable: Global
+   ======================================== */
+
+/**
+ * Tipografía para elementos inline
+ */
+span{
+     font-family: truenorg;
+}
+
+/**
+ * Títulos H1-H5 con estilo unificado
+ * 
+ * @color: #6EC1E4 (celeste corporativo)
+ * @font: Roboto (bold)
+ * @reutilizar: Para mantener consistencia visual en títulos
+ */
+h1,h2,h3,h4,h5{
+    font-family: Roboto, sans-serif;
+    font-weight: 700;
+    color: #6EC1E4;               /* Color de marca principal */
+}
+
+/**
+ * Labels de campos con estilo unificado
+ * 
+ * @aplicar-a: Etiquetas de formularios y campos
+ * @customizar: Mantener !important solo si necesitas override
+ */
+.field__label{
+    font-family: Roboto, sans-serif;
+    font-weight: 700 !important; 
+    color: #6EC1E4;               /* Coincide con títulos */
+}
+
+/**
+ * Items de navegación
+ * 
+ * @aplicar-a: Menús, navbar items
+ */
+.nav-item{
+    font-family: truenorg !important;
+}
+
+
+/* ========================================
+   MENSAJES DEL SISTEMA (Status, Error, Warning)
+   Reutilizable: [data-drupal-messages]
+   ======================================== */
+
+/**
+ * Contenedor de mensajes de estado
+ * 
+ * @aplicar-a: Mensajes de Drupal, alertas del sistema
+ * @variantes: .messages--status, .messages--error, .messages--warning
+ */
+
+/* Wrapper principal de mensajes */
+.region.region-content [data-drupal-messages] {
+  margin-bottom: 1rem;
+}
+
+.region.region-content .messages__wrapper {
+  max-width: 100%;
+}
+
+/* Estilos base para todos los mensajes */
+.region.region-content .messages {
+  border-radius: 0.5rem;
+  padding: 0.75rem 1rem;
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
+/**
+ * Mensaje de éxito (verde)
+ * 
+ * @color-fondo: #e8f8f3
+ * @color-borde: #2ecc71
+ * @color-texto: #145a32
+ */
+.region.region-content .messages--status {
+  background: #e8f8f3;
+  border: 1px solid #2ecc71;
+  color: #145a32;
+}
+
+.region.region-content .messages--status a {
+  color: #117a65;
+  font-weight: 600;
+  text-decoration: underline;
+}
+
+/* ========================================
+   TÍTULO DE PÁGINA PRINCIPAL
+   Reutilizable: #block-bootstrap5-page-title
+   ======================================== */
+
+/**
+ * Bloque de título de página centrado
+ * 
+ * @aplicar-a: Páginas de contenido, landing pages
+ * @customizar: text-align, margin-bottom
+ * @patrón: Título grande + centrado + espaciado inferior
+ */
+.region.region-content #block-bootstrap5-page-title {
+  text-align: center;
+  margin-bottom: 1rem;           /* Separación del contenido siguiente */
+}
+
+/**
+ * Estilo del H1 principal
+ * 
+ * @tamaño: 2.2rem (responsive)
+ * @color: #6ec1e4 (celeste corporativo)
+ * @peso: 700 (bold)
+ */
+.region.region-content #block-bootstrap5-page-title h1 {
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+  font-size: 2.2rem;
+  color: #6ec1e4;
+}
+
+/* Campo de título como inline-block */
+.region.region-content #block-bootstrap5-page-title .field--name-title {
+  display: inline-block;
+}
+
+/* ========================================
+   SISTEMA DE PESTAÑAS (Tabs)
+   Reutilizable: .tabs-wrapper, .nav-tabs
+   ======================================== */
+
+/**
+ * Pestañas de acciones locales (Ver/Editar/Eliminar/Revisiones)
+ * 
+ * @aplicar-a: Interfaces de administración, paneles de control
+ * @patrón: Nav tabs estilo Bootstrap con estados hover y activo
+ * @customizar: colores, padding, border-radius
+ */
+
+/* Contenedor principal de pestañas */
+.region.region-content #block-bootstrap5-local-tasks {
+  margin-bottom: 1.5rem;         /* Separación del contenido */
+}
+
+/* Wrapper con borde inferior */
+.region.region-content .tabs-wrapper.tabs-primary {
+  border-bottom: 1px solid #dee2e6;  /* Línea separadora */
+}
+
+/* Navegación de pestañas sin borde */
+.region.region-content .tabs-wrapper .nav.nav-tabs {
+  border: none;
+  gap: 0.25rem;                  /* Espaciado entre pestañas */
+}
+
+/* Item individual de pestaña */
+.region.region-content .tabs-wrapper .nav-item {
+  margin-bottom: -1px;           /* Superpone el borde inferior */
+}
+
+/**
+ * Link de pestaña - Estado base
+ * 
+ * @colores: texto #555, fondo transparente
+ * @transición: 0.15s en hover
+ */
+.region.region-content .tabs-wrapper .nav-link {
+  border-radius: 0.5rem 0.5rem 0 0;  /* Redondeado superior */
+  border: 1px solid transparent;
+  padding: 0.4rem 0.75rem;
+  font-size: 0.9rem;
+  color: #555;
+  background-color: transparent;
+  transition: background-color 0.15s ease, color 0.15s ease,
+    border-color 0.15s ease;
+}
+
+/**
+ * Link de pestaña - Hover
+ */
+.region.region-content .tabs-wrapper .nav-link:hover {
+  background-color: #f5f5f5;     /* Fondo gris claro */
+  color: #111;                   /* Texto oscuro */
+}
+
+/**
+ * Link de pestaña - Estado activo
+ * 
+ * @color-activo: #0d6efd (azul Bootstrap)
+ * @peso: 600 (semi-bold)
+ */
+.region.region-content .tabs-wrapper .nav-link.active,
+.region.region-content .tabs-wrapper .nav-link.is-active {
+  background-color: #ffffff;     /* Fondo blanco */
+  border-color: #dee2e6 #dee2e6 #ffffff;  /* Borde con fondo */
+  color: #0d6efd;                /* Azul activo */
+  font-weight: 600;
+}
+
+/* ========================================
+   TARJETA DE NODO (Article/Content)
+   Reutilizable: article.node
+   ======================================== */
+
+/**
+ * Contenedor principal de artículo/nodo
+ * 
+ * @aplicar-a: Páginas de detalle de contenido, artículos, posts
+ * @patrón: Tarjeta blanca con sombra sutil y padding generoso
+ * @customizar: padding, border-radius, box-shadow
+ */
+.region.region-content article.node {
+  background-color: #ffffff;
+  border-radius: 0.75rem;        /* Bordes redondeados */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);  /* Sombra sutil */
+  padding: 1.5rem 1.25rem;       /* Padding interno generoso */
+}
+
+/* ===== METADATOS DEL NODO ===== */
+
+/**
+ * Sección de metadatos (autor, fecha, etc.)
+ * 
+ * @patrón: Línea separadora inferior
+ */
+.region.region-content .node__meta {
+  border-bottom: 1px solid #ececec;  /* Separador visual */
+  margin-bottom: 1rem;
+  padding-bottom: 0.75rem;
+}
+
+/**
+ * Información de envío (submitted by...)
+ */
+.region.region-content .node__submitted {
+  font-size: 0.85rem;
+  color: #777;                   /* Gris medio */
+}
+
+/**
+ * Link del nombre de usuario
+ */
+.region.region-content .node__submitted a.username {
+  font-weight: 600;
+  color: #0056b3;                /* Azul de enlace */
+  text-decoration: none;
+}
+
+.region.region-content .node__submitted a.username:hover {
+  text-decoration: underline;
+}
+
+/* ===== CONTENIDO PRINCIPAL DEL NODO ===== */
+
+/**
+ * Wrapper de contenido con layout vertical
+ * 
+ * @layout: flexbox columna con espaciado consistente
+ */
+.region.region-content .node__content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;                   /* Espaciado entre campos */
+}
+
+/* ===== CAMPO BODY (Texto Principal) ===== */
+
+/**
+ * Campo de cuerpo principal con tipografía legible
+ * 
+ * @aplicar-a: Contenido de artículos, descripciones largas
+ * @line-height: 1.7 (óptimo para lectura)
+ * @color: #4a4a4a (gris oscuro legible)
+ */
+.region.region-content .field--name-body {
+  font-size: 1rem;
+  line-height: 1.7;              /* Espaciado de línea óptimo */
+  color: #4a4a4a;                /* Gris oscuro para lectura */
+}
+
+/**
+ * Subtítulos H2 dentro del body
+ * 
+ * @patrón: Títulos celestes con márgenes verticales
+ * @reutilizar: Para secciones dentro del contenido
+ */
+.region.region-content .field--name-body h2 {
+  font-family: "Roboto", sans-serif;
+  font-size: 1.5rem;
+  margin: 1.5rem 0 0.75rem;      /* Espacio superior e inferior */
+  color: #6ec1e4;                /* Color de marca */
+  font-weight: 700;
+}
+
+/**
+ * Párrafos dentro del body
+ */
+.region.region-content .field--name-body p {
+  margin-bottom: 0.75rem;        /* Separación entre párrafos */
+}
+
+/* ========================================
+   SISTEMA DE CAMPOS (Fields)
+   Reutilizable: .field, .field__label, .field__items
+   ======================================== */
+
+/**
+ * Contenedor base de cualquier campo
+ * 
+ * @aplicar-a: Todos los campos de Drupal
+ * @patrón: Label + Items
+ * @reutilizar: Sistema modular para mostrar datos estructurados
+ */
+.region.region-content .field {
+  margin-bottom: 1rem;           /* Separación entre campos */
+}
+
+/**
+ * Label de campo con estilo corporativo
+ * 
+ * @color: #6ec1e4 (celeste de marca)
+ * @peso: 700 (bold)
+ * @transform: uppercase (mayúsculas)
+ * @reutilizar: Para labels de formularios y campos de datos
+ */
+.region.region-content .field__label {
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: #6ec1e4;
+  margin-bottom: 0.35rem;
+  text-transform: uppercase;     /* Labels en mayúsculas */
+  letter-spacing: 0.02em;        /* Espaciado de letras sutil */
+}
+
+/**
+ * Contenedor de items (valores del campo)
+ * 
+ * @layout: flexbox horizontal con wrap
+ * @reutilizar: Para listas de valores, tags, múltiples items
+ */
+.region.region-content .field__items {
+  display: flex;
+  flex-wrap: wrap;               /* Permite múltiples líneas */
+  gap: 0.75rem;                  /* Espaciado entre items */
+}
+
+/**
+ * Item individual del campo
+ */
+.region.region-content .field__item {
+  font-size: 0.95rem;
+  color: #444;                   /* Gris oscuro */
+}
+
+/* ===== TIPOS DE CAMPOS ESPECÍFICOS ===== */
+
+/**
+ * Campos de email, booleano y fecha/hora
+ * 
+ * @aplicar-a: Datos de contacto, estados, timestamps
+ */
+.region.region-content .field--type-email .field__item,
+.region.region-content .field--type-boolean .field__item,
+.region.region-content .field--type-datetime .field__item {
+  font-size: 0.95rem;
+}
+
+/**
+ * Elemento datetime con estilo monoespaciado
+ * 
+ * @patrón: Fondo gris + fuente monospace
+ * @reutilizar: Para fechas, horas, códigos
+ */
+.region.region-content .datetime {
+  font-family: monospace;        /* Fuente monoespaciada */
+  font-size: 0.9rem;
+  background: #f7f7f7;           /* Fondo gris claro */
+  padding: 0.1rem 0.35rem;
+  border-radius: 0.25rem;
+}
+
+/* ========================================
+   ARCHIVOS Y DESCARGAS (Files)
+   Reutilizable: .file
+   ======================================== */
+
+/**
+ * Componente de archivo/descarga con estilo pill
+ * 
+ * @aplicar-a: Links de descarga, adjuntos, documentos
+ * @patrón: Badge redondeado con icono + link
+ * @reutilizar: Para cualquier archivo descargable
+ * @customizar: background-color, padding, border-radius
+ */
+.region.region-content .file {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;                  /* Espacio entre icono y texto */
+  padding: 0.35rem 0.7rem;
+  border-radius: 999px;          /* Forma de píldora/pill */
+  background-color: #f1f3f5;     /* Fondo gris muy claro */
+  font-size: 0.9rem;
+}
+
+/**
+ * Link de archivo
+ */
+.region.region-content .file a {
+  color: #0056b3;                /* Azul de enlace */
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.region.region-content .file a:hover {
+  text-decoration: underline;
+}
+
+/* ========================================
+   CAMPO MULTIMEDIA (field-img)
+   Reutilizable: .field--name-field-img
+   ======================================== */
+
+/**
+ * Campo para imágenes, audio, video, documentos y embeds
+ * 
+ * @aplicar-a: Galerías multimedia, contenido enriquecido
+ * @patrón: Layout vertical centrado con tarjetas
+ * @soporta: Audio, Documentos, Imágenes, Video, Embeds (YouTube, etc.)
+ * @reutilizar: Sistema completo de media
+ */
+
+/* Items del campo con layout vertical */
+.region.region-content .field--name-field-img .field__items {
+    gap: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/**
+ * Item individual con estilo de tarjeta
+ * 
+ * @patrón: Fondo claro + bordes redondeados + sombra sutil
+ */
+.region.region-content .field--name-field-img .field__item {
+  background-color: #fafafa;     /* Fondo gris muy claro */
+  border-radius: 0.75rem;
+  padding: 0.75rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);  /* Sombra mínima */
+}
+
+/* ===== TIPOS DE MEDIA ===== */
+
+/**
+ * Audio player
+ * @reutilizar: Para podcasts, archivos de audio
+ */
+.region.region-content audio {
+  width: 100%;                   /* Ancho completo */
+}
+
+/**
+ * Documentos (PDF, DOCX, etc.)
+ * @reutilizar: Para archivos descargables
+ */
+.region.region-content .media--type-document .file {
+  width: 100%;
+  justify-content: center;       /* Centrado horizontal */
+}
+
+/**
+ * Imágenes
+ * @reutilizar: Para fotos, ilustraciones, gráficos
+ */
+.region.region-content .media--type-image img {
+  display: block;
+  max-width: 100%;
+  height: auto;                  /* Mantiene ratio de aspecto */
+  border-radius: 0.5rem;
+}
+
+/**
+ * Video remoto (YouTube, Vimeo, etc.)
+ * @reutilizar: Para contenido embebido externo
+ */
+.region.region-content .media-oembed-content {
+  width: 100%;
+  max-width: 100%;
+  border-radius: 0.5rem;
+  border: none;
+}
+
+/**
+ * Video subido localmente
+ * @reutilizar: Para archivos de video propios
+ */
+.region.region-content video {
+  width: 100%;
+  height: auto;                  /* Mantiene ratio de aspecto */
+  border-radius: 0.5rem;
+}
+
+/* ========================================
+   ENLACES GENERALES
+   Reutilizable: a (dentro de .region-content)
+   ======================================== */
+
+/**
+ * Estilo global de enlaces
+ * 
+ * @color: #0056b3 (azul estándar)
+ * @hover: #003d80 (azul más oscuro)
+ * @aplicar-a: Todos los enlaces dentro del contenido
+ * @reutilizar: Mantener consistencia en links
+ */
+.region.region-content a {
+  color: #0056b3;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;  /* Subrayado delgado */
+}
+
+.region.region-content a:hover {
+  color: #003d80;                  /* Azul más oscuro en hover */
+}
+
+/* ========================================
+   DISEÑO RESPONSIVE
+   Breakpoints: 768px (tablet), 480px (móvil)
+   ======================================== */
+
+/**
+ * TABLET: hasta 768px
+ * 
+ * @ajustes: Reducir padding, ajustar tamaños de fuente
+ */
+@media (max-width: 768px) {
+  /* Reducir padding en región de contenido */
+  .region.region-content {
+    padding: 1rem 0.75rem;
+    margin-top: 1.5rem;
+  }
+
+  /* Reducir tamaño del título principal */
+  .region.region-content #block-bootstrap5-page-title h1 {
+    font-size: 1.8rem;             /* De 2.2rem a 1.8rem */
+  }
+
+  /* Reducir padding en tarjetas de nodo */
+  .region.region-content article.node {
+    padding: 1.25rem 1rem;
+  }
+}
+
+/**
+ * MÓVIL: hasta 480px
+ * 
+ * @ajustes: Máxima compresión de espacios
+ */
+@media (max-width: 480px) {
+  /* Padding mínimo en contenido */
+  .region.region-content {
+    padding: 0.75rem 0.5rem;
+  }
+
+  /* Reducir subtítulos H2 en body */
+  .region.region-content .field--name-body h2 {
+    font-size: 1.3rem;             /* De 1.5rem a 1.3rem */
+  }
+}
+
+
 
 
 /*# sourceMappingURL=style.css.map */
